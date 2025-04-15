@@ -21,10 +21,20 @@ class Contacts():
             print(contact)
 
     def logicDeleteContacts(self):
-        delete_id = self.idContact
-        for i in self.arrayContacts:
-            if(delete_id == self.saveID["id"]):
-                self.arrayContacts.remove(self.saveID)
+        find_ID = False
+        input_delete = int(input("Digite o ID do contato que deseja deletar:\n"))
+        for contact_ID in self.arrayContacts:
+            if(input_delete == contact_ID["id"]):
+                self.arrayContacts.remove(contact_ID)
+                find_ID = True
+                if(find_ID == True):
+                    print("Contato excluído com sucesso!")
+            
+        if(find_ID == False):
+                print("ID não identificado, tente novamente.")
+        
+    
+    
     
                 
     
